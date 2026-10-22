@@ -452,15 +452,16 @@ main {
     margin-top: 4px !important;
     padding-top: 14px !important;
   }
-  body.quiz-result-active .offer-headline,
-  body.quiz-result-active .benefit-check,
-  body.quiz-result-active .offer-copy {
-    display: none;
-  }
   body.quiz-result-active .result-heading {
     margin: -2px -1rem 16px;
     border-radius: 0;
   }
+}
+
+body.quiz-result-active .offer-headline,
+body.quiz-result-active .benefit-check,
+body.quiz-result-active .offer-copy {
+  display: none;
 }
 
 
