@@ -301,10 +301,6 @@ main {
   .form-btn.form-step-btn[data-form-step="2"] {
     font-size: 28px !important;
   }
-  main > .premium-countdown {
-    margin: 0 12px 4px;
-    padding-top: 12px;
-  }
   #tracking-config-error {
     margin-top: 8px !important;
   }
@@ -344,44 +340,8 @@ main {
     margin-top: 4px;
     margin-bottom: 8px;
   }
-  .form-result-card .premium-countdown {
-    margin: 4px 0 8px;
-    padding-top: 0;
-  }
 }
 
-.premium-countdown {
-  margin: 18px 16px 8px;
-  text-align: center;
-  color: #dc2626;
-  font-size: 1.15rem;
-  font-weight: 700;
-}
-.premium-countdown-clock {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  margin-top: 2px;
-}
-.premium-countdown-part {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 2.4ch;
-}
-.premium-countdown-value {
-  font-variant-numeric: tabular-nums;
-  line-height: 1.1;
-}
-.premium-countdown-label {
-  font-size: 0.72rem;
-  line-height: 1;
-  font-weight: 700;
-  margin-top: 1px;
-}
-.premium-countdown-colon {
-  line-height: 1.1;
-}
 .offer-headline {
   margin: 12px auto 8px;
   max-width: 46rem;
@@ -467,9 +427,8 @@ main {
 @media (max-width: 639px) {
   .offer-headline {
     font-size: calc(1.65rem - 8px);
-    border-top: 1px solid #4b5563;
     margin: 12px 16px 8px;
-    padding: 12px 0 0;
+    padding: 0;
   }
   .benefit-check {
     width: 100%;
@@ -493,7 +452,6 @@ main {
     margin-top: 4px !important;
     padding-top: 14px !important;
   }
-  body.quiz-result-active > main > .premium-countdown,
   body.quiz-result-active .offer-headline,
   body.quiz-result-active .benefit-check,
   body.quiz-result-active .offer-copy {

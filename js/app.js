@@ -470,45 +470,6 @@ async function updatePhoneNumberReactive() {
   }
 }
 
-function secondsUntilLocalMidnight() {
-  var now = new Date();
-  var midnight = new Date(now);
-  midnight.setHours(24, 0, 0, 0);
-  return Math.max(0, Math.floor((midnight.getTime() - now.getTime()) / 1000));
-}
-
-function startCountdown() {
-  var clocks = document.querySelectorAll(".premium-countdown-clock");
-  if (!clocks.length || window.premiumCountdownStarted) return;
-  window.premiumCountdownStarted = true;
-  var timeLeft = secondsUntilLocalMidnight();
-  function pad(n) {
-    return (n < 10 ? "0" : "") + n;
-  }
-  function render() {
-    var hours = Math.floor(timeLeft / 3600);
-    var minutes = Math.floor((timeLeft % 3600) / 60);
-    var seconds = timeLeft % 60;
-    clocks.forEach(function (clock) {
-      var hourNode = clock.querySelector('[data-part="hours"]');
-      var minuteNode = clock.querySelector('[data-part="minutes"]');
-      var secondNode = clock.querySelector('[data-part="seconds"]');
-      if (hourNode) hourNode.textContent = pad(hours);
-      if (minuteNode) minuteNode.textContent = pad(minutes);
-      if (secondNode) secondNode.textContent = pad(seconds);
-    });
-  }
-  render();
-  var countdownInterval = setInterval(function () {
-    if (timeLeft <= 0) {
-      clearInterval(countdownInterval);
-      return;
-    }
-    timeLeft--;
-    render();
-  }, 1000);
-}
-
 function showResultPanel() {
   showQuizStep("quiz-step-result");
 }
@@ -606,8 +567,6 @@ $("button.form-step-btn[data-form-step='2']").on("click", function () {
 });
 
 $("#claim-now-contact-button").on("click", handleClaimNowClick);
-
-startCountdown();
 
 let userId = localStorage.getItem("user_id");
 if (!userId) {
